@@ -26,8 +26,6 @@
 % Use fontawesome5 icons (for home, phone, mail, LinkedIn and GitHub)
 \usepackage{fontawesome5}
 
-\usepackage[dvipsnames]{xcolor}
-
 % Enable the combination of boldface and small caps 
 \usepackage[notmath]{sansmathfonts}
 
@@ -39,18 +37,32 @@
 \titleformat*{\section}{\sffamily\bfseries\scshape\Large}
 \titlespacing{\section}{0pt}{*2.0}{*1.5}
 
-%% \usepackage[utf8]{inputenc}
-%% \usepackage[brazil]{babel}
-%% \usepackage{amsmath}
-%% \usepackage{amsfonts}
-
-
-%% \usepackage[pdftex]{graphicx}
-%% \usepackage{color}
-
 % Comment out one of the two lines below to enable/disable page numbering
 %\pagestyle{empty} % disable page numbering
 \pagestyle{plain}  % enable page numbering
+
+% Define \mycolor (the color which will be used in this document)
+\usepackage[dvipsnames]{xcolor}       % use this option for Fuchsia
+%\usepackage[x11names]{xcolor}        % use this option for DodgerBlue4
+\definecolor{myblue}{RGB}{76,117,180} % custom color example
+%\newcommand{\mycolor}{myblue}
+\newcommand{\mycolor}{Fuchsia}
+%\newcommand{\mycolor}{DodgerBlue4}
+
+\newlength\mylen
+\setlength\mylen{4em}
+
+% Customize the format of \section titles so that
+% - a "section icon" appears instead of the section number;
+% - section icons are placed within the left margin.
+% (This is a hack! It kills section numbers!)
+%
+% Use \sectionicon{someIcon} to specify a section icon.
+%
+\newcommand{\thesectionicon}{}
+\newcommand{\sectionicon}[1]{\renewcommand{\thesectionicon}{#1}}
+\titleformat{\section}
+{\sffamily\bfseries\scshape\Large}{\llap{\makebox[1\mylen]{\textcolor{\mycolor}{\thesectionicon}}}}{-0.05em}{}
 
 \begin{document}
 
@@ -66,27 +78,29 @@
 \begin{minipage}[t]{0.65\textwidth}
   \begin{small}
   \begin{flushright}
-  Woluwe-Saint-Lambert\ \ \textcolor{Fuchsia}{\faHome\\}
-  +32 (0)495 99 41 32\ \ \textcolor{Fuchsia}{\faPhone\\}
-  \texttt{mreverbel@protonmail.com}\ \ \textcolor{Fuchsia}{\faEnvelope\\}
+  Woluwe-Saint-Lambert\ \ \textcolor{\mycolor}{\faHome\\}
+  +32 (0)495 99 41 32\ \ \textcolor{\mycolor}{\faPhone\\}
+  \texttt{mreverbel@protonmail.com}\ \ \textcolor{\mycolor}{\faEnvelope\\}
   % +32 495 99 41 32\ \ \faWhatsapp\\
-  \href{https://linkedin.com/in/marcio-reverbel-223144208/}{\texttt{linkedin.com/in/marcio-reverbel-223144208/}}\ \ \textcolor{Fuchsia}{\faLinkedin\\}
-  \url{https://github.com/omledufromage}\ \ \textcolor{Fuchsia}{\faGithub\\}
+  \href{https://linkedin.com/in/marcio-reverbel-223144208/}{\texttt{linkedin.com/in/marcio-reverbel-223144208/}}\ \ \textcolor{\mycolor}{\faLinkedin\\}
+  \url{https://github.com/omledufromage}\ \ \textcolor{\mycolor}{\faGithub\\}
   \end{flushright}
   \end{small}
 \end{minipage}
 
-\section*{\textcolor{Fuchsia}\faUser\ In a Snapshot}
+\sectionicon{\faUser}
+\section{In a Snapshot}
 
 I am a student in the master's of statistics program at the ULB, and also a pianist and music teacher. I see myself as someone who thrives in collaborative environments, although I am also capable of working independently whenever necessary. I have diligently kept a github account with my past university projects, as well as personal development projects. In addition to those, I was responsible for the sentiment analysis (using the roBERTa model) on data scraped off Twitter for my group's Bachelor Paper, and I had a one month student job in data visualization, both at the VUB. \\
 
 My key interests are in the fields of mathematical statistics, data science, time series, design of experiments, macroeconomics and computer programming.
 
-\section*{\textcolor{Fuchsia}\faGraduationCap\ Education}
+\sectionicon{\faGraduationCap}
+\section{Education}
 
 \begin{description}
 
-\item[\textcolor{Fuchsia}{MSc in Statistics}] | Université Libre de Bruxelles (ULB)
+\item[\textcolor{\mycolor}{MSc in Statistics}] | Université Libre de Bruxelles (ULB)
 
 From 2023. Expected graduation: July, 2025.
 
@@ -94,7 +108,7 @@ From 2023. Expected graduation: July, 2025.
   
 \textbf{Ongoing}: Algorithms for Big Data, Big Data: Distributed Data Management and Scalable Analytics, Statistical Foundations of Machine Learning, Inférence Robuste, Méthodes Non-Paramétriques, Analyse Statistique Multivariée, Topics in Probability Theory.
 
-\item[\textcolor{Fuchsia}{BSc in Business Economics}] | Vrije Universiteit Brussel (VUB)
+\item[\textcolor{\mycolor}{BSc in Business Economics}] | Vrije Universiteit Brussel (VUB)
 
 Graduated in 2023. Specialization in Business and Technology.
   
@@ -106,17 +120,17 @@ Graduated from the faculty's excellence program, with extra credit in the form o
 
 Bachelor Paper: ``An analysis of the public perception of e-scooter regulations in Brussels (17/20)''.
 
-\item[\textcolor{Fuchsia}{Data Science Specialization}] | Coursera -- John Hopkins University
+\item[\textcolor{\mycolor}{Data Science Specialization}] | Coursera -- John Hopkins University
   
 %Completed courses: The Data Scientist’s Toolbox (KEQJ386S4RRV), R Programming (Q53GBDJHN7FJ), Getting and Cleaning Data (LQJXCFVQ6ES6).
   
 Completed courses: The Data Scientist’s Toolbox, R Programming, Getting and Cleaning Data.  
 
-\item[\textcolor{Fuchsia}{MA in Music, Piano}] | Koninklijk Conservatorium Brussel
+\item[\textcolor{\mycolor}{MA in Music, Piano}] | Koninklijk Conservatorium Brussel
 
 Graduated in 2019.
 
-\item[\textcolor{Fuchsia}{BA in Music, Piano}] | University of São Paulo
+\item[\textcolor{\mycolor}{BA in Music, Piano}] | University of São Paulo
 
 Graduated in 2014.
 
@@ -126,25 +140,26 @@ Awarded a one-year FAPESP Research Fellowship for my project on the formal analy
 
 \end{description}
 
-\section*{\textcolor{Fuchsia}\faToolbox\ Selected Work Experience}
+\sectionicon{\faToolbox}
+\section{Selected Work Experience}
 \begin{description} 
-\item[\textcolor{Fuchsia}{Student Job}] | Vrije Universiteit Brussel
+\item[\textcolor{\mycolor}{Student Job}] | Vrije Universiteit Brussel
 
 One-month research project, supervised by Prof. Vincent Ginis, exploring data visualization of music. It was based on Martin Wattenberg’s “The Shape of Song” project and its implementation of arc diagrams.
   
 From July to August, 2022.
 
-\item[\textcolor{Fuchsia}{Mathematics Student-Assistant}] | Vrije Universiteit Brussel
+\item[\textcolor{\mycolor}{Mathematics Student-Assistant}] | Vrije Universiteit Brussel
 
 As part of the Excellence program in my Bachelor’s, I was tasked with helping the Mathematics professor and assistants throughout the year, specifically during the weekly exercise sessions for the Mathematics I and Mathematics II courses from the Business Economics bachelor program.
   
 From September 2021 to June 2022.
 \\
-\item[\textcolor{Fuchsia}{Piano Teacher}] | BRIMA - Brussels International Music Academy\footnote{The school changed name in 2022. It was previously known as the École de Musique Tchaikovsky.}
+\item[\textcolor{\mycolor}{Piano Teacher}] | BRIMA - Brussels International Music Academy\footnote{The school changed name in 2022. It was previously known as the École de Musique Tchaikovsky.}
   
 From 2020 until 2023.
 
-\item[\textcolor{Fuchsia}{Piano Teacher}] | Cap sur la Musique
+\item[\textcolor{\mycolor}{Piano Teacher}] | Cap sur la Musique
 
 From 2018 until 2021
 
@@ -154,7 +169,8 @@ From 2018 until 2021
 %\vspace{\stretch{1}}
 %\mbox{\ }
 
-\section*{\textcolor{Fuchsia}\faTools\ Skills}
+\sectionicon{\faTools}
+\section{Skills}
 
 \begin{minipage}[t]{0.6\textwidth}
 \begin{itemize}
@@ -193,7 +209,8 @@ From 2018 until 2021
 \hfill
 \end{minipage}
 
-\section*{\textcolor{Fuchsia}\faLanguage\ Languages}
+\sectionicon{\faLanguage}
+\section{Languages}
 
 \begin{minipage}[t]{0.45\textwidth}
 \begin{itemize}
@@ -212,8 +229,8 @@ From 2018 until 2021
 \hfill
 \end{minipage}
 
-
-\section*{\textcolor{Fuchsia}\faRunning\ Activities}
+\sectionicon{\faRunning}
+\section{Activities}
 
 During the year of 2011, I did volunteer work for Crea+, an NGO dedicated to giving reinforcement mathematics lessons to children from public schools in São Paulo, Brazil.
 
