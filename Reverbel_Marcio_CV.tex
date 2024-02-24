@@ -32,10 +32,6 @@
 % Enable clickable links
 \usepackage{hyperref}
 
-% Customize section titles
-\usepackage{titlesec}
-\titleformat*{\section}{\sffamily\bfseries\scshape\Large}
-\titlespacing{\section}{0pt}{*2.0}{*1.5}
 
 % Comment out one of the two lines below to enable/disable page numbering
 %\pagestyle{empty} % disable page numbering
@@ -45,9 +41,11 @@
 \usepackage[dvipsnames]{xcolor}       % use this option for Fuchsia
 %\usepackage[x11names]{xcolor}        % use this option for DodgerBlue4
 \definecolor{myblue}{RGB}{76,117,180} % custom color example
+\definecolor{mySlateBlue}{RGB}{97,112,140}
 %\newcommand{\mycolor}{myblue}
-\newcommand{\mycolor}{Fuchsia}
+%\newcommand{\mycolor}{Fuchsia}
 %\newcommand{\mycolor}{DodgerBlue4}
+\newcommand{\mycolor}{mySlateBlue}
 
 \newlength\mylen
 \setlength\mylen{4em}
@@ -59,10 +57,14 @@
 %
 % Use \sectionicon{someIcon} to specify a section icon.
 %
+\usepackage[explicit]{titlesec}
+\titlespacing{\section}{0pt}{*2.0}{*1.5}
 \newcommand{\thesectionicon}{}
 \newcommand{\sectionicon}[1]{\renewcommand{\thesectionicon}{#1}}
+%\titleformat{\section}
+%{\sffamily\bfseries\scshape\Large}{\llap{\makebox[1\mylen]{\textcolor{\mycolor}{\thesectionicon}}}}{-0.05em}{}
 \titleformat{\section}
-{\sffamily\bfseries\scshape\Large}{\llap{\makebox[1\mylen]{\textcolor{\mycolor}{\thesectionicon}}}}{-0.05em}{}
+{\sffamily\bfseries\scshape\Large}{\llap{\makebox[1\mylen]{\textcolor{\mycolor}{\thesectionicon}}}}{-0.05em}{\colorbox{\mycolor}{\parbox[b]{\dimexpr\textwidth-0.05em-1\fboxsep-2\fboxrule\relax}{\vskip 0.25ex \textcolor{white}{#1} \vskip 0.25ex}}}
 
 \begin{document}
 
@@ -87,12 +89,14 @@
   \end{flushright}
   \end{small}
 \end{minipage}
+%\vspace{1ex}
 
 \sectionicon{\faUser}
 \section{In a Snapshot}
 
-I am a student in the master's program in statistics at ULB, and also a pianist and music teacher. I see myself as someone who thrives in collaborative environments, although I am also capable of working independently whenever necessary. Diligent and curious, I have kept a GitHub account with past university projects, as well as personal development projects. In addition to those, as a student at VUB I was responsible for the sentiment analysis (using the roBERTa model) on data scraped from Twitter for my group's Bachelor Paper, had a summer student job in data visualization, and was a student-assistant in Calculus and Linear Algebra courses for one year.\\
+I am a student in the master's program in statistics at ULB, and also a pianist and music teacher. I see myself as someone who thrives in collaborative environments, although I am also capable of working independently whenever necessary. Diligent and curious, I keep a GitHub account with past university projects, as well as personal development projects. During my bachelor's at VUB I performed sentiment analysis (using the roBERTa model) on data scraped from Twitter, had a summer student job in data visualization, and was a student-assistant in Calculus and Linear Algebra courses for one year.
 
+\vspace{1.5ex}
 My key interests are in the fields of mathematical statistics, data science, time series, design of experiments, macroeconomics and computer programming.
 
 \sectionicon{\faGraduationCap}
