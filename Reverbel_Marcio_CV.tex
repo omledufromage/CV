@@ -1,5 +1,8 @@
 \documentclass[12pt]{article}
 
+\input{glyphtounicode}
+\pdfgentounicode=1
+
 % Set page dimensions for comfortable reading
 \setlength{\oddsidemargin}{1.65cm}
 \setlength{\evensidemargin}{1.65cm}
@@ -32,7 +35,6 @@
 % Enable clickable links
 \usepackage{hyperref}
 
-
 % Comment out one of the two lines below to enable/disable page numbering
 %\pagestyle{empty} % disable page numbering
 \pagestyle{plain}  % enable page numbering
@@ -43,11 +45,11 @@
 \definecolor{myblue}{RGB}{76,117,180} % custom color example
 \definecolor{mySlateBlue}{RGB}{97,112,140}
 \definecolor{myFuchsia}{RGB}{77,0,77}
-\newcommand{\mycolor}{myFuchsia}
+%\newcommand{\mycolor}{myFuchsia}
 %\newcommand{\mycolor}{myblue}
 %\newcommand{\mycolor}{Fuchsia}
 %\newcommand{\mycolor}{DodgerBlue4}
-%\newcommand{\mycolor}{mySlateBlue}
+\newcommand{\mycolor}{mySlateBlue}
 
 \newlength\mylen
 \setlength\mylen{4em}
