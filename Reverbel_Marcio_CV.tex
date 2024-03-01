@@ -70,35 +70,46 @@
 \titleformat{\section}
 {\sffamily\bfseries\scshape\Large}{\llap{\makebox[1\mylen]{\textcolor{\mycolor}{\thesectionicon}}}}{-0.05em}{\colorbox{\mycolor}{\parbox[b]{\dimexpr\textwidth-0.05em-1\fboxsep-2\fboxrule\relax}{\vskip 0.25ex \textcolor{white}{#1} \vskip 0.25ex}}}
 
+\usepackage{graphicx}
+
+
 \begin{document}
 
-\begin{minipage}[t]{0.25\textwidth}
+\begin{minipage}{0.65\textwidth}
+\vspace{0pt}
+\begin{flushleft}
+\begin{small}
+
   {\sffamily\bfseries\scshape\huge
-    Marcio
-    
-         \vspace{1ex}
-     
-    Reverbel}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.65\textwidth}
-  \begin{small}
-  \begin{flushright}
-  Woluwe-Saint-Lambert\ \ \textcolor{\mycolor}{\faHome\\}
-  +32 (0)495 99 41 32\ \ \textcolor{\mycolor}{\faPhone\\}
-  \texttt{mreverbel@protonmail.com}\ \ \textcolor{\mycolor}{\faEnvelope\\}
+    Marcio Reverbel}
+
+\vspace{5ex}       
+  \textcolor{\mycolor}{\faHome} Woluwe-Saint-Lambert\\
+  \textcolor{\mycolor}{\faPhone} +32 (0)495 99 41 32\\
+  \textcolor{\mycolor}{\faEnvelope} \texttt{mreverbel@protonmail.com}\\
   % +32 495 99 41 32\ \ \faWhatsapp\\
-  \href{https://linkedin.com/in/marcio-reverbel-223144208/}{\texttt{linkedin.com/in/marcio-reverbel-223144208/}}\ \ \textcolor{\mycolor}{\faLinkedin\\}
-  \url{https://github.com/omledufromage}\ \ \textcolor{\mycolor}{\faGithub\\}
-  \end{flushright}
-  \end{small}
-\end{minipage}
+  \textcolor{\mycolor}{\faLinkedin} \href{https://linkedin.com/in/marcio-reverbel-223144208/}{\texttt{linkedin.com/in/marcio-reverbel-223144208/}}\\
+  \textcolor{\mycolor}{\faGithub} \url{https://github.com/omledufromage}\\
+\end{small}
+\end{flushleft}
+\end{minipage}%
+%
+\hfill
+\begin{minipage}{0.35\textwidth}
+\begin{flushright}
 %\vspace{1ex}
+    \includegraphics[width=0.75\textwidth]{Marcio_-_head.jpg}
+    \label{img:g}
+\end{flushright}
+\end{minipage}
 
 \sectionicon{\faUser}
 \section{In a Snapshot}
 
-I am a student in the master's program in statistics at ULB, and also a pianist and music teacher. I see myself as someone who thrives in collaborative environments, although I am also capable of working independently whenever necessary. Diligent and curious, I keep a GitHub account with past university projects, as well as personal development projects. During my bachelor's at VUB I performed sentiment analysis (using the roBERTa model) on data scraped from Twitter, had a summer student job in data visualization, and was a student-assistant in Calculus and Linear Algebra courses for one year. I graduated from my bachelor's summa cum laude and currently maintain a 18.6 average GPA for my master's. 
+Diligent, driven and highly analytical, I see myself as someone who thrives in collaborative environments, while also being fully capable of working independently whenever necessary. 
+
+\vspace{1.5ex}
+I am a student in the master's program in statistics at ULB, and also a pianist and music teacher. I keep a GitHub account with past university projects, as well as personal development projects. During my bachelor's at VUB I performed sentiment analysis (using the roBERTa model) on data scraped from Twitter, had a summer student job in data visualization, and was a student-assistant in Calculus and Linear Algebra courses for one year. I graduated from my bachelor's summa cum laude and currently maintain a 18.6 average GPA for my master's.
 
 \vspace{1.5ex}
 My key interests are in the fields of mathematical statistics, data science, machine learning, design of experiments, macroeconomics and computer programming.
@@ -116,17 +127,20 @@ From 2023. Expected graduation: July, 2025.
   
 \textbf{Ongoing}: Algorithms for Big Data, Big Data: Distributed Data Management and Scalable Analytics, Statistical Foundations of Machine Learning, Inférence Robuste, Méthodes Non-Paramétriques, Analyse Statistique Multivariée, Topics in Probability Theory.
 
+\vspace{5ex}
+
 \item[\textcolor{\mycolor}{BSc in Business Economics}] | Vrije Universiteit Brussel (VUB)
 
 Graduated in 2023. Specialization in Business and Technology.
   
 GPA: 17.2/20 (with \textbf{greatest distinction -- \emph{summa cum laude}}).
 
-Graduated from the faculty's excellence program, with extra credit in the form of student assistantships, extra courses taken (at ULB), and participation in the program committee meetings.
+Completed the ES excellence program.  
+%Graduated from the faculty's excellence program, with extra credit in the form of student assistantships, extra courses taken (at ULB), and participation in the program committee meetings.
 
 \textbf{Relevant courses}: Econometrics (20/20), Advanced Mathematics (20/20), Mathematics II (20/20), Mathematics I (20/20), Corporate Finance (20/20), Statistics II (19/20), Statistics I (19/20), Business Information Systems (17/20), Introduction to Microeconomics (17/20), Intermediate Microeconomics (17/20), Introduc\-tion to Macroeconomics (18/20), Intermediate Macroeconomics (16/20), IT Modeling and Economics (16/20).
 
-Bachelor Paper: ``An analysis of the public perception of e-scooter regulations in Brussels (17/20)''.
+%Bachelor Paper: ``An analysis of the public perception of e-scooter regulations in Brussels (17/20)''.
 
 \item[\textcolor{\mycolor}{Data Science Specialization}] | Coursera -- John Hopkins University
   
@@ -159,7 +173,7 @@ From July to August, 2022.
 
 \item[\textcolor{\mycolor}{Mathematics Student-Assistant}] | Vrije Universiteit Brussel
 
-As part of the Excellence program in my Bachelor’s, I was tasked with helping the Mathematics professor and assistants throughout the year, specifically during the weekly exercise sessions for the Mathematics I and Mathematics II courses from the Business Economics bachelor program.
+As part of the Excellence program in my Bachelor’s, I helped the Mathematics professors with weekly exercise sessions for the Mathematics I and Mathematics II courses of the VUB Business Economics bachelor program.
 
 From September 2021 to June 2022.
 
@@ -213,6 +227,7 @@ From 2018 until 2021
       Project, Visio \\
     \end{tabular}
   \item \LaTeX
+  \item Linux (Ubuntu)
 \end{itemize}
 \hfill
 \end{minipage}
@@ -243,6 +258,36 @@ From 2018 until 2021
 During the year of 2011, I did volunteer work for Crea+, an NGO dedicated to giving reinforcement mathematics lessons to children from public schools in São Paulo, Brazil.
 
 \smallskip
-\textbf{Other Interests}: Board games, ping-pong, swimming, jazz, early music, biking, Chinese and Japanese cuisine.
+\textbf{Other Interests}: Board games, ping-pong, swimming, jazz, early music, cycling, Chinese and Japanese cuisine.
 
 \end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.35\textwidth}
+\vspace{15pt}
+    \includegraphics[width=0.75\textwidth]{Marcio_-_head.jpg}
+    \label{img:g}
+\end{minipage}
+%
+\begin{minipage}{0.65\textwidth}
+\vspace{0pt}
+\begin{flushright}
+\begin{small}
+
+  {\sffamily\bfseries\scshape\huge
+    Marcio Reverbel}
+
+\vspace{5ex}       
+  Woluwe-Saint-Lambert\ \ \textcolor{\mycolor}{\faHome\\}
+  +32 (0)495 99 41 32\ \ \textcolor{\mycolor}{\faPhone\\}
+  \texttt{mreverbel@protonmail.com}\ \ \textcolor{\mycolor}{\faEnvelope\\}
+  % +32 495 99 41 32\ \ \faWhatsapp\\
+  \href{https://linkedin.com/in/marcio-reverbel-223144208/}{\texttt{linkedin.com/in/marcio-reverbel-223144208/}}\ \ \textcolor{\mycolor}{\faLinkedin\\}
+  \url{https://github.com/omledufromage}\ \ \textcolor{\mycolor}{\faGithub\\}
+\end{small}
+\end{flushright}
+\end{minipage}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
