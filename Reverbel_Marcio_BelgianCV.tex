@@ -1,0 +1,188 @@
+\documentclass[11pt, a4paper, sans]{article}
+\usepackage[utf8]{inputenc}                  % Character encoding
+
+% Define and load the xcolor package with all necessary options
+\usepackage[dvipsnames, table]{xcolor}       % Color options with added 'table' option if needed
+
+\usepackage{graphicx}                        % For including images
+\usepackage{tikz}                            % For custom graphics
+\usepackage{hyperref}                        % For clickable links
+\usepackage{fontawesome5}                    % Icons
+\usepackage[explicit]{titlesec}              % Custom section titles
+\usepackage[vmargin=25mm, hmargin=25mm, top=20mm]{geometry}  % Page margins
+
+% Define custom colors
+\definecolor{mySlateBlue}{RGB}{97, 112, 140}
+%\definecolor{myFuchsia}{RGB}{77, 0, 77}
+%\definecolor{myBlue}{RGB}{76, 117, 180}
+\newcommand{\mycolor}{mySlateBlue}           % Set the default color for the document
+
+% Custom rating command for skills section
+\newcommand{\rating}[2]{%
+    \begin{tikzpicture}
+    \foreach \x in {1,...,#1} {
+        \pgfmathparse{\x<=#2 ? "\mycolor" : "white"} % Filled or unfilled
+        \edef\fillcolor{\pgfmathresult}
+        \draw[fill=\fillcolor] (\x * 0.25,0) circle (0.1);
+    }
+    \end{tikzpicture}%
+}
+
+% Custom section formatting
+\newlength\mylen
+\setlength\mylen{4em}
+\titleformat{\section}
+  {\sffamily\bfseries\scshape\Large}
+  {\llap{\makebox[1\mylen]{\textcolor{\mycolor}{\thesectionicon}}}}
+  {-0.05em}
+  {\colorbox{\mycolor}{\parbox[b]{\dimexpr\textwidth-0.05em-1\fboxsep-2\fboxrule\relax}{\vskip 0.25ex \textcolor{white}{#1} \vskip 0.25ex}}}
+\titlespacing{\section}{0pt}{*2.0}{*1.5}
+\newcommand{\thesectionicon}{}
+\newcommand{\sectionicon}[1]{\renewcommand{\thesectionicon}{#1}}
+
+% Disable paragraph indent
+\setlength{\parindent}{0pt}
+\pagestyle{empty}  % Disable page numbering
+
+% Custom command for vertical space adjustment
+% (the negative space value was found by trial and error -- it is the smallest
+% adjustment that makes the document fit within a single page)
+\newcommand{\adjust}{\vspace{-1.01ex}}
+
+\begin{document}
+
+\begin{minipage}{0.65\textwidth}
+\vspace{0pt}
+\begin{flushleft}
+\begin{small}
+
+  {\sffamily\bfseries\scshape\huge
+    Marcio Reverbel}
+
+\vspace{2ex}       
+  \textcolor{\mycolor}{\faHome} Avenue des Vaillants, 21 | 1200, Woluwe-Saint-Lambert\\
+  \textcolor{\mycolor}{\faPhone} +32 (0)495 99 41 32\\
+  \textcolor{\mycolor}{\faEnvelope} \texttt{mreverbel@gmail.com}\\
+  % +32 495 99 41 32\ \ \faWhatsapp\\
+  \textcolor{\mycolor}{\faLinkedin} \href{https://linkedin.com/in/marcio-reverbel-223144208/}{\texttt{linkedin.com/in/marcio-reverbel-223144208/}}\\
+  \textcolor{\mycolor}{\faGithub} \url{https://github.com/omledufromage}
+  
+  \vspace{1ex}
+  \textcolor{\mycolor}{Availability:} From August, 2024 
+  \\
+\end{small}
+\end{flushleft}
+\end{minipage}%
+%
+\begin{minipage}{0.35\textwidth}
+\begin{flushright}
+%\vspace{1ex}
+    \includegraphics[width=0.60\textwidth]{Marcio_-_head.jpg}
+    \label{img:g}
+\end{flushright}
+\end{minipage}
+\sectionicon{\faLanguage}
+\section{Languages}
+\begin{minipage}[t]{0.50\textwidth}
+\begin{itemize}
+\setlength{\itemsep}{-5pt}
+\item Portuguese (Fluent – Native)
+\item English (Fluent – Bilingual)
+\item French (Professional – B2)
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{0.50\textwidth}
+\begin{itemize}
+\setlength{\itemsep}{-5pt}
+\item German (Beginner – A2)
+\item Chinese Mandarin (Beginner – HSK 2)
+\end{itemize}
+\hfill
+\end{minipage}
+\sectionicon{\faGraduationCap}
+\section{Education}
+\begin{description}
+\item[\textcolor{\mycolor}{MSc in Statistics}] | Université Libre de Bruxelles (ULB)
+  \hfill 2023 -- present \\
+  Current GPA: 18.6/20
+  \adjust
+
+\item[\textcolor{\mycolor}{BSc in Business Economics}] | Vrije Universiteit Brussel (VUB)
+  \hfill  2020 -- 2023\\
+  GPA: 17.2/20 \emph{summa cum laude}.
+  \adjust
+
+\item[\textcolor{\mycolor}{MA in Music, Piano}] | Koninklijk Conservatorium Brussel
+  \hfill 2016 -- 2018\adjust
+
+\item[\textcolor{\mycolor}{BA in Music, Piano}] | University of São Paulo
+  \hfill 2010 -- 2014
+\end{description} 
+\sectionicon{\faToolbox}
+\section{Selected Work Experience}
+\begin{description}
+
+\item[\textcolor{\mycolor}{Data Visualization Research Student Job}]
+  \hfill July -- August, 2022\\
+  Vrije Universiteit Brussel
+  \adjust
+  
+\item[\textcolor{\mycolor}{Calculus Student-Assistant}]
+  \hfill September -- December, 2021\\
+  Vrije Universiteit Brussel
+  \adjust
+
+\item[\textcolor{\mycolor}{Linear Algebra Student-Assistant}]
+  \hfill February -- July, 2022\\
+  Vrije Universiteit Brussel
+  \adjust
+
+\item[\textcolor{\mycolor}{Professional Piano Teacher}] 
+  \hfill 2020 -- 2023\\
+  BRIMA - Brussels International Music Academy
+  \adjust
+
+\item[\textcolor{\mycolor}{Professional Piano Teacher}] 
+  \hfill 2018 -- 2021\\
+  Cap sur la Musique, Kraainem
+
+\end{description}
+\sectionicon{\faTools}
+\section{Skills}
+\noindent % Ensures the minipage starts at the left margin
+\begin{minipage}[t]{0.50\textwidth}
+  \begin{itemize}
+    \setlength{\itemsep}{-3pt}
+    \item Programming Languages:\\
+      	\begin{tabular}{l@{\hskip 0.5in}l}
+    		Python | \rating{3}{2} \\
+    		R | \rating{3}{2} \\
+    		C | \rating{3}{2} \\
+    		SQL | \rating{3}{1} \\
+    		Mathematica | \rating{3}{1} \\
+		\end{tabular}
+    \item Spark | \rating{3}{2}
+    \item Spark Streaming | \rating{3}{2}
+  \end{itemize}
+\end{minipage}
+\hfill % Adds horizontal space between minipages
+\begin{minipage}[t]{0.50\textwidth}
+	\begin{itemize}
+    	\setlength{\itemsep}{-3pt}
+    	\item Git | \rating{3}{1}
+    	\item Linux (Ubuntu) | \rating{3}{2}
+    	\item \LaTeX | \rating{3}{3}
+    	\item Microsoft:\\
+    	\begin{tabular}[t]{@{}l@{}}
+        	Excel | \rating{3}{2} \\
+        	Power BI, Access | \rating{3}{1}  \\
+        	Project, Visio | \rating{3}{1}
+    	\end{tabular}
+    	\item AI methods for Big Data \rating{3}{2}
+	\end{itemize}
+\end{minipage}
+\sectionicon{\faRunning}
+\section{Hobbies}
+Board games, ping-pong, swimming, football, cycling, mathematics, physics, astronomy, Chinese and Japanese cuisine, and jazz.
+
+\end{document}
